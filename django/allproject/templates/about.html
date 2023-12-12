@@ -21,5 +21,28 @@
     <div>
         <h1>ABOUT PAGE</h1>
     </div>
+    {%if display_list %}
+    <table class="table">
+        <thead>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>NUMBER</th>
+            <th>EMAIL</th>
+        </thead>
+        <tbody>
+                {% for user in display_list %}
+                    <tr>
+                        <td>{{user.id}}</td>
+                        <td>{{user.uname}}</td>
+                        <td>{{user.unum}}</td>
+                        <td>{{user.uemail}}</td>
+                    </tr>
+                {% endfor %}           
+        </tbody>
+    </table>
+    
+    {%else%}
+        <h2>No data</h2>
+    {% endif %}
 </body>
 </html>
