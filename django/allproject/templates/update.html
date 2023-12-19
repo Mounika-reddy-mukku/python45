@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h4>Upadte the registered user details</h4>
+        </div>
+        <div class="card-body">
+            <form action="/update/{{userupdate.id}}" method="POST">
+                {% csrf_token %}
+                <label for="">Name</label>
+                <input type="text" name="uname" id="id_uname" value="{{userupdate.uname}}"><br>
+                <label for="">Email</label>
+                <input type="text" name="uemail" id="id_uemail" value="{{userupdate.uemail}}"><br>
+                <label for="">Number</label>
+                <input type="number" name="unum" id="id_unum" value="{{userupdate.unum}}"><br>
+                <input type="submit" value="update">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

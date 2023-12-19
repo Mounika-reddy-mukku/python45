@@ -28,6 +28,7 @@
             <th>NAME</th>
             <th>NUMBER</th>
             <th>EMAIL</th>
+            <th>Action</th>
         </thead>
         <tbody>
                 {% for user in display_list %}
@@ -36,6 +37,10 @@
                         <td>{{user.uname}}</td>
                         <td>{{user.unum}}</td>
                         <td>{{user.uemail}}</td>
+                        <td>
+                            <a href="/update/{{user.id}}">update</a>
+                            <a href="/delete/{{user.id}}">delete</a>
+                        </td>
                     </tr>
                 {% endfor %}           
         </tbody>

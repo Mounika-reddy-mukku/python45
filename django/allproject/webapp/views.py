@@ -19,9 +19,23 @@ def getregisterpage(request):
         form=Form1()
     return render(request,'register.html',{'form':form})
 
+def updateuser(request,id): 
+    userupdate=registeruser.objects.get(id=id)
+    if request.method=="POST" :
+        regdata=Form1(request.POST)
+        if regdata.is_valid():
+            regdata.save()
+            return redirect('/about')
+    return render(request,'update.html',context={'userupdate':userupdate})
+
 def getloginpage(request):
     form=Form2()
     return render(request,'login.html',{'form':form})
 
 def savepage(request):
     return render(request,'save.html')
+
+def deleteuser(request,id):
+    user=registeruser.objects.get(id=id)
+    user.delete()
+    return redirect("/about")

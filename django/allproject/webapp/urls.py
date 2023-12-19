@@ -6,6 +6,9 @@ urlpatterns=[
     path('about/',views.getaboutpage),
     path('register/',views.getregisterpage),
     path('login/',views.getloginpage),
-    path('save',views.savepage)
+    path('save',views.savepage),
+    path('delete/<int:id>',views.deleteuser),
+    path('update/<int:id>',views.updateuser)
+    
     
 ]
