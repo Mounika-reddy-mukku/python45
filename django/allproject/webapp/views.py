@@ -22,7 +22,7 @@ def getregisterpage(request):
 def updateuser(request,id): 
     userupdate=registeruser.objects.get(id=id)
     if request.method=="POST" :
-        regdata=Form1(request.POST)
+        regdata=Form1(request.POST, instance=userupdate)
         if regdata.is_valid():
             regdata.save()
             return redirect('/about')
