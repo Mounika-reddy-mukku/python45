@@ -1,4 +1,4 @@
-N=int(input("Enter the number:"))
+N=15
 
 for i in range(2,N):
     count=0
